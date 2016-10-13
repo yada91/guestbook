@@ -9,20 +9,20 @@
 <title>Insert title here</title>
 <%!GuestBook gb = new GuestBook();%>
 </head>
-<body>
-	<%
-		request.setCharacterEncoding("UTF-8");
 
-		String name = request.getParameter("name");
-		String password = request.getParameter("password");
-		String content = request.getParameter("content");
+<%
+	request.setCharacterEncoding("UTF-8");
 
-		gb.setName(name);
-		gb.setPassword(password);
-		gb.setContent(content);
-		GuestBookDAO.insert(gb);
+	String name = request.getParameter("name");
+	String password = request.getParameter("password");
+	String content = request.getParameter("content");
 
-		response.sendRedirect("index.jsp");
-	%>
-</body>
+	gb.setName(name);
+	gb.setPassword(password);
+	gb.setContent(content);
+	GuestBookDAO.insert(gb);
+
+	response.sendRedirect("index.jsp");
+%>
+
 </html>
